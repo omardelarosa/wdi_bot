@@ -1,4 +1,5 @@
 ["redis-brain.coffee", 
 "shipit.coffee", 
 "github-activity.coffee", 
+"xkcd.coffee",
 "hubot-gtalk-gluck"]
