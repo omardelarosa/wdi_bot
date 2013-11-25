@@ -1,1 +1,1 @@
-web: bin/hubot -a gtalk-gluck -n LambdaBot
+web: bin/hubot --adapter hipchat
