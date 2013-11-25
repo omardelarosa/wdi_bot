@@ -2,4 +2,4 @@
 "shipit.coffee", 
 "github-activity.coffee", 
 "xkcd.coffee",
-"hubot-gtalk-gluck"]
+"github-pull-request-notifier.coffee"]
