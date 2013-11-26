@@ -24,7 +24,8 @@
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "date-utils": ">=1.2.5",
     "githubot": "0.2.0",
-    "hubot-hipchat": "~2.5.1-5"
+    "hubot-hipchat": "~2.5.1-5",
+    "hubot-simpsons": ">= 0.0.0"
   },
   "engines": {
     "node": ">= 0.8.x",
