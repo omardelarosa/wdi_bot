@@ -11,9 +11,11 @@
 moment = require('moment');
 
 is_good_time = () ->
+  # returns true if the time isn't between 9am and 5pm on a weekday.
   current_hour = moment().hour()
   current_minute = moment().minute()
-  if current_hour < 9 or current_hour >= 17
+  is_weekend = () -> moment().day() == 0 or moment().day() == 7
+  if is_weekend() or current_hour < 9 or current_hour >= 17
     return true
   else
     return false
