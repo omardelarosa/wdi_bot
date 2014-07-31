@@ -24,7 +24,7 @@ module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
     # check current time
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       imageMe msg, msg.match[3], (url) ->
         msg.send url
@@ -32,14 +32,14 @@ module.exports = (robot) ->
 
   robot.respond /animate( me)? (.*)/i, (msg) ->
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       imageMe msg, msg.match[2], true, (url) ->
         msg.send url
 
   robot.respond /(?:mo?u)?sta(?:s|c)he?(?: me)? (.*)/i, (msg) ->
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       type = Math.floor(Math.random() * 3)
       mustachify = "http://mustachify.me/#{type}?src="

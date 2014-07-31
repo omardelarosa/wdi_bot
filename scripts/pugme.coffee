@@ -27,7 +27,7 @@ module.exports = (robot) ->
 
   robot.respond /pug me/i, (msg) ->
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       msg.http("http://pugme.herokuapp.com/random")
         .get() (err, res, body) ->
@@ -35,7 +35,7 @@ module.exports = (robot) ->
 
   robot.respond /pug bomb( (\d+))?/i, (msg) ->
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       count = msg.match[2] || 5
       msg.http("http://pugme.herokuapp.com/bomb?count=" + count)
@@ -44,7 +44,7 @@ module.exports = (robot) ->
 
   robot.respond /how many pugs are there/i, (msg) ->
     unless is_good_time()
-      msg.send "Sorry.  Perhaps you should be paying attention to class?"
+      msg.send "Sorry. Perhaps you should be paying attention to class?"
     else
       msg.http("http://pugme.herokuapp.com/count")
         .get() (err, res, body) ->
