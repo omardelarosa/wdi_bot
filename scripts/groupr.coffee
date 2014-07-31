@@ -31,3 +31,7 @@ module.exports = (robot) ->
     three = msg.match[3]
     msg_full = msg.match
     msg.send "#{one}, #{two}, #{three}, #{msg_full}"
+
+  robot.respond /groupr split (\d+)/, (msg) ->
+    num = msg.match[0]
+    msg.send num
