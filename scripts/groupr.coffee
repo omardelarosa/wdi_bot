@@ -4,6 +4,23 @@ students_arr = ['Clayton Albachteh', 'Joe Biggica', 'Jeffrey Campomanes', 'Nasta
 
 module.exports = (robot) ->
 
-  robot.respond /groupr/, (msg) ->
-    arr = students_arr.pop()
-    msg.send arr
+  shuffle = (array) ->
+    counter = array.length
+    temp = undefined
+    index = undefined
+
+    while counter > 0
+
+      index = Math.floor(Math.random() * counter)
+
+      counter--
+
+      temp = array[counter]
+      array[counter] = array[index]
+      array[index] = temp
+
+    return array
+
+  robot.respond /groupr randomstudent/, (msg) ->
+    student = shuffle(students_arr).pop()
+    msg.send student
