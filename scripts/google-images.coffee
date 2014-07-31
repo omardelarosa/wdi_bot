@@ -28,7 +28,7 @@ module.exports = (robot) ->
     else
       # imageMe msg, msg.match[3], (url) ->
       #   msg.send url
-      msg.send "#{moment().day()} and #{moment().hour()}"
+      msg.send "#{moment().day()} and #{moment().hour()} and #{moment().minute()}"
 
   robot.respond /animate( me)? (.*)/i, (msg) ->
     unless is_good_time()
