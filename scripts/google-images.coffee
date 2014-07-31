@@ -12,7 +12,7 @@ moment = require('moment');
 
 is_good_time = () ->
   # returns true if the time isn't between 9am and 5pm on a weekday.
-  current_hour = moment().hour()
+  current_hour = moment().hour() - 4
   current_minute = moment().minute()
   is_weekend = () -> moment().day() == 0 or moment().day() == 7
   if is_weekend() or current_hour < 9 or current_hour >= 17
@@ -26,9 +26,9 @@ module.exports = (robot) ->
     unless is_good_time()
       msg.send "Sorry.  It's not a good time for that!"
     else
-      # imageMe msg, msg.match[3], (url) ->
-      #   msg.send url
-      msg.send "#{moment().day()} and #{moment().hour()} and #{moment().minute()}"
+      imageMe msg, msg.match[3], (url) ->
+        msg.send url
+      # msg.send "#{moment().day()} and #{moment().hour()} and #{moment().minute()}"
 
   robot.respond /animate( me)? (.*)/i, (msg) ->
     unless is_good_time()
