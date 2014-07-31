@@ -26,8 +26,9 @@ module.exports = (robot) ->
     unless is_good_time()
       msg.send "Sorry.  It's not a good time for that!"
     else
-      imageMe msg, msg.match[3], (url) ->
-        msg.send url
+      # imageMe msg, msg.match[3], (url) ->
+      #   msg.send url
+      msg.send "#{moment().day()} and #{moment().hour()}"
 
   robot.respond /animate( me)? (.*)/i, (msg) ->
     unless is_good_time()
@@ -64,4 +65,3 @@ imageMe = (msg, query, animated, faces, cb) ->
       if images?.length > 0
         image  = msg.random images
         cb "#{image.unescapedUrl}#.png"
-
