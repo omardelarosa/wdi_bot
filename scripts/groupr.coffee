@@ -21,6 +21,12 @@ module.exports = (robot) ->
 
     return array
 
-  robot.respond /groupr randomstudent/, (msg) ->
+  robot.respond /groupr victim/, (msg) ->
     student = shuffle(students_arr).pop()
     msg.send student
+
+  robot.respond /groupr (.)/, (msg) ->
+    one = msg.match[1]
+    two = msg.match[2]
+    three = msg.match[3]
+    msg.send "#{one}, #{two}, #{three}"
