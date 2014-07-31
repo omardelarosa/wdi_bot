@@ -33,5 +33,5 @@ module.exports = (robot) ->
     msg.send "#{one}, #{two}, #{three}, #{msg_full}"
 
   robot.respond /groupr split (\d+)/, (msg) ->
-    num = msg.match[0]
+    num = msg.match[1]
     msg.send num
