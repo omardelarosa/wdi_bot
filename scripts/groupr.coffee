@@ -4,25 +4,25 @@ students_arr = ['Clayton Albachteh', 'Joe Biggica', 'Jeffrey Campomanes', 'Nasta
 
 module.exports = (robot) ->
 
-  shuffle = (array) ->
-    counter = array.length
-    temp = undefined
-    index = undefined
-
-    while counter > 0
-
-      index = Math.floor(Math.random() * counter)
-
-      counter--
-
-      temp = array[counter]
-      array[counter] = array[index]
-      array[index] = temp
-
-    return array
+  # shuffle = (array) ->
+  #   counter = array.length
+  #   temp = undefined
+  #   index = undefined
+  #
+  #   while counter > 0
+  #
+  #     index = Math.floor(Math.random() * counter)
+  #
+  #     counter--
+  #
+  #     temp = array[counter]
+  #     array[counter] = array[index]
+  #     array[index] = temp
+  #
+  #   return array
 
   robot.respond /groupr victim/, (msg) ->
-    student = shuffle(students_arr).pop()
+    student = _.sample(students_arr)
     msg.send student
 
   robot.respond /groupr test me (.*)/, (msg) ->
@@ -33,5 +33,10 @@ module.exports = (robot) ->
     msg.send "#{one}, #{two}, #{three}, #{msg_full}"
 
   robot.respond /groupr split (\d+)/, (msg) ->
-    num = msg.match[1]
-    msg.send num
+    groups = []
+    group_num = msg.match[1]
+    group_size = students_arr/group_num
+    for i in [0..group_num] by 1
+      group_arr = []
+
+      group_arr.push();
