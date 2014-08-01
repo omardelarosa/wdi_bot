@@ -21,6 +21,12 @@ module.exports = (robot) ->
   #
   #   return array
 
+  stringifyGroups = ->
+    _.each groups, (reply, index) ->
+      reply += "\n"
+      reply += "#{index}"
+      reply
+
   robot.respond /groupr victim/, (msg) ->
     student = _.sample(students_arr)
     msg.send student
@@ -41,4 +47,4 @@ module.exports = (robot) ->
       group_arr = while num -= 1
         students_arr.pop()
       groups.push(group_arr)
-    msg.send "hello #{groups}"
+    msg.send "#{stringifyGroups()}"
