@@ -49,4 +49,4 @@ module.exports = (robot) ->
       group_arr = while num -= 1
         students_arr.pop()
       groups.push(group_arr)
-    msg.send "#{reply}"
+    msg.send "#{groups}"
