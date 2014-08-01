@@ -25,7 +25,9 @@ module.exports = (robot) ->
     _.each groups, (reply, index) ->
       reply += "\n"
       reply += "#{index}"
+      reply += "hellO!"
       reply
+    , ""
 
   robot.respond /groupr victim/, (msg) ->
     student = _.sample(students_arr)
