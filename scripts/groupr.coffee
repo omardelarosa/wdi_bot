@@ -35,8 +35,10 @@ module.exports = (robot) ->
   robot.respond /groupr split (\d+)/, (msg) ->
     groups = []
     group_num = msg.match[1]
-    group_size = students_arr/group_num
+    group_size = students_arr.length/group_num
     for i in [0..group_num] by 1
-      group_arr = []
-
-      group_arr.push();
+      num = group_size
+      group_arr = while num -= 1
+        students_arr.pop()
+      groups.push(group_arr)
+    msg.send "hello #{groups}"
